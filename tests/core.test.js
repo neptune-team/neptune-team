@@ -9,7 +9,10 @@ import Adapter from 'enzyme-adapter-react-16';
 import PhotoInfo from '../client/src/Components/PhotoInfo';
 import TipsList from '../client/src/Components/TipsList';
 import WalkabilityInfo from '../client/src/Components/WalkabilityInfo';
-import TweetBox from '../client/src/Components/TweetBox'
+import TweetBox from '../client/src/Components/TweetBox';
+import Search from '../client/src/Components/Search';
+import TopTweetsInfo from '../client/src/Components/TopTweetsInfo';
+
 
 configure({ adapter: new Adapter() });
 
@@ -51,3 +54,15 @@ test('Should render WalkabilityInfo component', () => {
   const walkScore = shallow(<WalkabilityInfo/>);
   expect(walkScore).toBeDefined();
 });
+
+test('Should render Search component', () => {
+	const search = shallow(<Search/>);
+	expect(search).toBeDefined();
+});
+
+test('Should render TopTweetsInfo component', () => {
+	const topTweets = shallow(<TopTweetsInfo city= {'sf'} topTweetsFrom = {[]} topTweetsAbout = {[]}/>);
+	expect(topTweets).toBeDefined();
+});
+
+
